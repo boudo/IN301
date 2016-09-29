@@ -7,12 +7,16 @@
 
 //fonction principale
 int main(){
-	
-	/*int i;
+	// ETOILE
+	printf("\n\n**********ETOILE************\n\n");
+	int i;
 	int nbEtoile=1;
-	int nbEspace=10;
+	int b;
+	printf("Entrer le nombre d'étoile ");
+	scanf("%d",&b);
+	int nbEspace=b;
 	
-	while(nbEtoile<=10){
+	while(nbEtoile<=b){
 		i=1;
 		while(i<=nbEspace){
 			printf(" ");
@@ -22,37 +26,48 @@ int main(){
 		nbEtoile++;
 	}
 	
+	//CONVERTION
+	printf("\n\n****************CONVETION***************");
 	int heure,minute,seconde;
 	int a=60;
-	int m;
-	printf("Entrer le nombre a convertir ");
+	int n, m;
+	printf("\n\nEntrer le nombre de seconde à convertir ");
 	scanf("%d",&m);
+	n=m;
 	seconde = m % a;
 	m = m / a;
 	minute = m % a;
 	heure = m / a;
-	printf("heure= %d , minute= %d , seconde= %d\n\n" ,heure,minute,seconde);
+
+	if(n==0){
+	printf("\n%d seconde correspond à  %d heure  %d minute  %d seconde\n\n" ,n,heure,minute,seconde);
+	}
+	else if (seconde>1){
+		if(heure>1){
+			printf("\n%d secondes correspond à  %d heures  %d minutes  %d secondes\n\n" ,n,heure,minute,seconde);
+		}else if(minute>1){
+		printf("\n%d secondes correspond à  %d heure  %d minutes  %d secondes\n\n" ,n,heure,minute,seconde);
+			}else{
+			printf("\n%d secondes correspond à  %d heure  %d  minute  %d secondes\n\n" ,n,heure,minute,seconde);
+		}
+	}
 	
-	*/
-	
-	int x,y,tmp=0,res=0;
+	// MULTIPLICATION EGYPTIENNE
+	printf("\n***********MULTIPLICATION EGYPTIENNE*************\n\n");
+	int x=0,y=0,tmp=0,res=0;
 	printf("Entrer les nombres à multiplier ");
 	scanf("%d,%d" , &x, &y);
-	printf("vous faite la multiplicattion Egyptienne de %d par %d \n", x,y);
-	 while(x >= 1){
+	printf("\n\nvous faite la multiplicattion Egyptienne de %d par %d \n\n", x,y);
+	 while(x > 1){
 		 if(x % 2 == 0){
-			 //res += (x/2) * (2*y);
 			 x = x/2;
-			 //tmp=y;
-			 y=tmp+y;
+			 y= 2*y;
 		 }else{
-			 //res = (x-1) * (y+tmp);
 			 x = x-1;
 			 tmp=tmp+y;
-			 //y= y+y;
 		 }
 		 }res= y+tmp;
-		 printf("%d\n\n",res); 
+		 printf("le resultat est %d\n\n",res); 
   
   return 0;
 }
