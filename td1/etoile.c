@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 
 
@@ -39,7 +40,7 @@ int main(){
 	minute = m % a;
 	heure = m / a;
 
-	if(n==0){
+	if(n<=1){
 	printf("\n%d seconde correspond à  %d heure  %d minute  %d seconde\n\n" ,n,heure,minute,seconde);
 	}
 	else if (seconde>1){
@@ -69,5 +70,19 @@ int main(){
 		 }res= y+tmp;
 		 printf("le resultat est %d\n\n",res); 
   
+  //LIMITE D'UNE SUITE
+
+	float precision = 0.01;
+	float s = 0.0;
+	int j = 1;
+	
+	while(fabs(1.0/(i*i)) >= precision){
+		s+= 1.0/(j*j);
+		j++;
+	}printf("La limite de suite S est %fl\n", s);
+  
+  
   return 0;
 }
+
+
