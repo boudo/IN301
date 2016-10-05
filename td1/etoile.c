@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <math.h>
 
 
 
@@ -28,10 +27,10 @@ int main(){
 	}
 	
 	//CONVERTION
-	printf("\n\n****************CONVETION***************");
+	printf("\n****************CONVETION***************");
 	int heure,minute,seconde;
 	int a=60;
-	int n, m;
+	int n=0, m=0;
 	printf("\n\nEntrer le nombre de seconde à convertir ");
 	scanf("%d",&m);
 	n=m;
@@ -40,23 +39,32 @@ int main(){
 	minute = m % a;
 	heure = m / a;
 
-	if(n<=1){
-	printf("\n%d seconde correspond à  %d heure  %d minute  %d seconde\n\n" ,n,heure,minute,seconde);
-	}
-	else if (seconde>1){
+	
 		if(heure>1){
+			if(minute>1 && seconde>1){
 			printf("\n%d secondes correspond à  %d heures  %d minutes  %d secondes\n\n" ,n,heure,minute,seconde);
-		}else if(minute>1){
-		printf("\n%d secondes correspond à  %d heure  %d minutes  %d secondes\n\n" ,n,heure,minute,seconde);
+			}else if(minute>1){
+			printf("\n%d secondes correspond à  %d heures  %d minutes  %d seconde\n\n" ,n,heure,minute,seconde);
+			}else if(seconde>1){
+			printf("\n%d secondes correspond à  %d heures  %d minute  %d secondes\n\n" ,n,heure,minute,seconde);
 			}else{
-			printf("\n%d secondes correspond à  %d heure  %d  minute  %d secondes\n\n" ,n,heure,minute,seconde);
+			printf("\n%d seconde correspond à  %d heure  %d minute  %d seconde\n\n" ,n,heure,minute,seconde);
+			}
+		}else if(minute>1 && seconde>1){
+		printf("\n%d secondes correspond à  %d heure  %d minutes  %d secondes\n\n" ,n,heure,minute,seconde);
+		}else if(minute>1){
+		printf("\n%d secondes correspond à  %d heure  %d minutes  %d seconde\n\n" ,n,heure,minute,seconde);
+		}else if (seconde>1){
+		printf("\n%d secondes correspond à  %d heure  %d minute  %d secondes\n\n" ,n,heure,minute,seconde);
 		}
+	else{
+		printf("\n%d seconde correspond à  %d heure  %d minute  %d seconde\n\n" ,n,heure,minute,seconde);
 	}
 	
 	// MULTIPLICATION EGYPTIENNE
-	printf("\n***********MULTIPLICATION EGYPTIENNE*************\n\n");
+	printf("\n***********MULTIPLICATION EGYPTIENNE*************\n");
 	int x=0,y=0,tmp=0,res=0;
-	printf("Entrer les nombres à multiplier ");
+	printf("\nEntrer les nombres à multiplier ");
 	scanf("%d,%d" , &x, &y);
 	printf("\n\nvous faite la multiplicattion Egyptienne de %d par %d \n\n", x,y);
 	 while(x > 1){
@@ -70,16 +78,34 @@ int main(){
 		 }res= y+tmp;
 		 printf("le resultat est %d\n\n",res); 
   
-  //LIMITE D'UNE SUITE
+	  //LIMITE D'UNE SUITE
+	printf("******************LIITE DE LA SUITE S****************\n\n");
 
 	float precision = 0.01;
 	float s = 0.0;
-	int j = 1;
+	 i = 1;
 	
-	while(fabs(1.0/(i*i)) >= precision){
-		s+= 1.0/(j*j);
-		j++;
-	}printf("La limite de suite S est %fl\n", s);
+	while(1.0/(i*i) >= precision){
+		s+= 1.0/(i*i);
+		i++;
+	}printf("La limite de suite S est %fl\n\n", s);
+	
+	
+	//NOMBRE PREMIER
+	printf("************NOMBRE PREMIER**********\n\n");
+	int np,div=0;
+	printf("Entrer un nombre a tester s'il est premier ");
+	scanf("%d",&np);
+	int p=np;
+	while(p>=1 && div<=2){
+		if(np%p==0){
+			div+=1;	
+		}p--;
+	}if(div==2){
+		printf("\nLe nombre %d est premier\n",np);
+	}else{
+		printf("\nLe nombre %d n'est pas premier\n\n",np);
+	}
   
   
   return 0;
