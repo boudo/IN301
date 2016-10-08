@@ -29,7 +29,7 @@ int main(){
 			}else if(seconde>1){
 			printf("\n%d secondes correspond à  %d heures  %d minute  %d secondes\n\n" ,n,heure,minute,seconde);
 			}else{
-			printf("\n%d seconde correspond à  %d heure  %d minute  %d seconde\n\n" ,n,heure,minute,seconde);
+			printf("\n%d seconde correspond à  %d heures  %d minute  %d seconde\n\n" ,n,heure,minute,seconde);
 			}
 		}else if(minute>1 && seconde>1){
 		printf("\n%d secondes correspond à  %d heure  %d minutes  %d secondes\n\n" ,n,heure,minute,seconde);

@@ -28,7 +28,7 @@ int main(){
 	printf("Entrer un nombre a tester s'il est premier ");
 	scanf("%d",&n);
 	
-	while((p*p)<n){
+	while((p*p)<=n){
 			if(n%p==0){
 				printf("\nLe nombre %d n'est pas premier\n\n",n); return 0;
 			}
