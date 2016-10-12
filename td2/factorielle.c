@@ -5,7 +5,7 @@
 
 int factorielle(int n){
 	
-	int res=0;
+	int res=1;
 	if(n<=1){
 		res=1;
 	}else{
@@ -13,8 +13,7 @@ int factorielle(int n){
 	}
 	return res;
 }
-
-
+	
 
 //Fonction principale
 int main(){

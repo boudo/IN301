@@ -10,12 +10,12 @@ float racine(int n){
 	float g=0,d=n;
 	float m;
 	while(d-g>epsilon){
-	m=(d+g)/2;
-	if(m*m>n){
-	d=m;
-	}else{g=m;}
+		m=(d+g)/2;
+		if(m*m>n){
+			d=m;
+		}else{g=m;}
 	
-}return d;
+	}return d;
 }
 
 //fonction principale
