@@ -13,6 +13,10 @@ void permuteVal(int *a, int *b){
 	
 }
 
+void reinitPointeur(int **p){ //en paramettre l'adresse d'un pointeur
+	*p=NULL;//contenu de l'adresse du pointeur = NULL
+}
+
 
 int main(){
 	
@@ -36,20 +40,26 @@ int main(){
 	printf("\n\nLa taille de tab est %lu\n",sizeof(tab));
 	printf("\n\nLa taille de tab[0] est %lu\n",sizeof(tab[0]));
 	printf("\n\nLa taille de &tab[0] est %lu\n",sizeof(&tab[0]));
-	printf("\n\nLa taille de *&tab est %lu\n",sizeof(&*tab));
-	printf("\n\nLa taille de *&tab est %lu\n",sizeof(*&tab[0]));
+	printf("\n\nLa taille de &*tab est %lu\n",sizeof(&*tab));
+	printf("\n\nLa taille de *&tab[0] est %lu\n",sizeof(*&tab[0]));
 	
-	// char (*p)[10]=&tab
+	//char (*p)[10]=&tab
 	char (*p)[10];
 	printf("\n\nLa taille de p est %lu\n",sizeof(p)); // un pointeur est codé sur 8 octet
 	printf("\n\nLa taille de *p est %lu\n",sizeof(*p));
 	printf("\n\nLa taille de (*p)[2]) est %lu\n",sizeof((*p)[2]));
-	printf("\n\nLa taille de &(*p)[2]) est %lu\n",sizeof(&(*p)[2]));
-	*/
+	printf("\n\nLa taille de &(*p)[2]) est %lu\n",sizeof(&(*p)[2]));*/
+	
 	//Permuter valeur de a et b
 	int a=5,b=7;
 	permuteVal(&a,&b);
 	printf("\n\nLa valeur de a est %d et b est %d\n",a,b);
+	
+	//reinitPointeur
+	int x=1;
+	int *p=&x;
+	reinitPointeur(&p);
+	printf(" *P vaut %p\n",p);
 	
 	
 	
